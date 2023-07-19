@@ -1,0 +1,26 @@
+id: 03e22e9a-d0cb-46f3-a3bc-5f56c0b6f61e
+timestamp: 2023-07-19T17:18:01Z
+username: clarkjo-vmware
+source: TAP-GUI
+accelerator:
+  name: tanzu-java-web-app
+  source:
+    image: tapregtest.azurecr.io/tapimages@sha256:0310128e62ade8150fbfa9fd82e826d98d4311a17b97ba5cb2bdab1ffc25d7d9
+fragments:
+  - name: build-wrapper-maven
+    source:
+      image: tapregtest.azurecr.io/tapimages@sha256:195a3ca6585fa91c41292584a19c2807c72ecdf986ce860a7147451e89d467d4
+  - name: java-version
+    source:
+      image: tapregtest.azurecr.io/tapimages@sha256:fa976ccf1609cb69e74a0162f0f49581fd0d393003e2fbe5d54d12eae62b4ff9
+  - name: tap-workload
+    source:
+      image: tapregtest.azurecr.io/tapimages@sha256:dbf0dedb6848ad8a7704c1c19465a1ddae9039b0e63c1dd0df3e2ed9cbda6093
+options:
+  bsGitBranch: main
+  bsGitRepository: github.com?owner=clarkjo-vmware&repo=tanzu-java-web-app-demo
+  includeBuildToolWrapper: true
+  javaVersion: 17
+  projectName: tanzu-java-web-app-demo
+  repositoryPrefix: tanzu-java-web-app-demo
+  updateBoot3: true
