@@ -1,7 +1,7 @@
 SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='tanzu-java-web-app-demo/tanzu-java-web-app-demo-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
 NAMESPACE = os.getenv("NAMESPACE", default='default')
-
+allow_k8s_contexts('tap-on-azure')
 k8s_custom_deploy(
     'tanzu-java-web-app-demo',
     apply_cmd="tanzu apps workload apply -f config/workload.yaml --update-strategy replace --debug --live-update" +
